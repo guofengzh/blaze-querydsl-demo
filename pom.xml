@@ -120,7 +120,8 @@
 		<dependency>
 			<groupId>org.hibernate.orm</groupId>
 			<artifactId>hibernate-jpamodelgen</artifactId>
-			<scope>provided</scope>		</dependency>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- Blaze-Persistence, Tomorrow's JPA, today -->
 		<!-- https://persistence.blazebit.com/documentation/1.6/core/manual/en_US/#supported-java-runtimes -->
