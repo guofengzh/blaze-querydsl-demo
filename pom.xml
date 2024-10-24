@@ -4,7 +4,7 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.avic.lightpdm</groupId>
+	<groupId>com.demo</groupId>
 	<artifactId>blaze-querydsl-demo</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -24,7 +24,8 @@
 		<hibernate-jpamodelgen.version>${hibernate.version}</hibernate-jpamodelgen.version>
 		<jackson-module-jakarta-xmlbind-annotations.version>2.17.2</jackson-module-jakarta-xmlbind-annotations.version>
 		<lombok.version>1.18.34</lombok.version>
-		<openfeign.querydsl.version>6.7</openfeign.querydsl.version>
+		<!--openfeign.querydsl.version>6.7</openfeign.querydsl.version-->
+		<com.querydsl.version>5.1.0</com.querydsl.version>
 		<hsqldb.version>2.7.3</hsqldb.version>
 		<mysql-connector-j.version>8.0.33</mysql-connector-j.version>
 	</properties>
@@ -90,7 +91,7 @@
 			<version>${mysql-connector-j.version}</version>
 		</dependency>
 
-		<dependency>
+		<!--dependency>
 			<groupId>io.github.openfeign.querydsl</groupId>
 			<artifactId>querydsl-jpa-spring</artifactId>
 			<version>${openfeign.querydsl.version}</version>
@@ -100,12 +101,25 @@
 					<artifactId>antlr4-runtime</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency-->
+		<dependency>
+			<groupId>com.querydsl</groupId>
+			<artifactId>querydsl-jpa</artifactId>
+			<version>${com.querydsl.version}</version>
+			<scope>provided</scope>
+			<classifier>jakarta</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.querydsl</groupId>
+			<artifactId>querydsl-apt</artifactId>
+			<version>${com.querydsl.version}</version>
+			<scope>provided</scope>
+			<classifier>jakarta</classifier>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate.orm</groupId>
 			<artifactId>hibernate-jpamodelgen</artifactId>
-			<!--version>6.3.0.Final</version-->
 			<scope>provided</scope>		</dependency>
 
 		<!-- Blaze-Persistence, Tomorrow's JPA, today -->
@@ -193,10 +207,10 @@
 							<version>${lombok.version}</version>
 						</annotationProcessorPath>
 						<annotationProcessorPath>
-							<groupId>io.github.openfeign.querydsl</groupId>
+							<groupId>com.querydsl</groupId>
 							<artifactId>querydsl-apt</artifactId>
-							<version>${openfeign.querydsl.version}</version>
-							<classifier>jpa</classifier>
+							<version>5.1.0</version>
+							<classifier>jakarta</classifier>
 						</annotationProcessorPath>
 						<annotationProcessorPath>
 							<groupId>org.hibernate.orm</groupId>
