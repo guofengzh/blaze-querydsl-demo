@@ -1,4 +1,4 @@
-package com.demo;
+package com.avic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

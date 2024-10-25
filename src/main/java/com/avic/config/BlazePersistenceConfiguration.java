@@ -1,4 +1,4 @@
-package com.demo.config;
+package com.avic.config;
 
 import com.blazebit.persistence.Criteria;
 import com.blazebit.persistence.CriteriaBuilderFactory;
@@ -15,8 +15,15 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.PersistenceUnit;
 
 @Configuration
-@EntityScan(basePackages = "com.demo")
-@EnableEntityViews(basePackages = "com.demo")
+@EntityScan(basePackages = "com.avic")
+@EnableEntityViews(basePackages = { "com.avic"})
+@EnableBlazeRepositories(
+        basePackages = "com.avic",
+        includeFilters = @ComponentScan.Filter(
+                type = FilterType.REGEX,
+                pattern = "com\\.avic\\..*.view\\..*Repository"
+        )
+)
 public class BlazePersistenceConfiguration {
 
     @PersistenceUnit
