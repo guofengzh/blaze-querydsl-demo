@@ -19,12 +19,12 @@
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 
-		<blaze-persistence.version>1.6.12</blaze-persistence.version>
+		<blaze-persistence.version>1.6.13</blaze-persistence.version>
 		<hibernate.version>6.5.2.Final</hibernate.version> <!-- check what spring-data-jpa uses -->
 		<hibernate-jpamodelgen.version>${hibernate.version}</hibernate-jpamodelgen.version>
 		<jackson-module-jakarta-xmlbind-annotations.version>2.17.2</jackson-module-jakarta-xmlbind-annotations.version>
 		<lombok.version>1.18.34</lombok.version>
-		<openfeign.querydsl.version>6.7</openfeign.querydsl.version>
+		<openfeign.querydsl.version>6.8</openfeign.querydsl.version>
 		<hsqldb.version>2.7.3</hsqldb.version>
 		<mysql-connector-j.version>8.0.33</mysql-connector-j.version>
 	</properties>
